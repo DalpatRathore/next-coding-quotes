@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Quotes Next App",
+  title: "Next Coding Quotes",
   description: "This page generates a random quote",
 };
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="mx-auto p-12 bg-black min-h-screen text-white">
+        <main className="mx-auto p-12 bg-black min-h-screen text-white flex items-center justify-center">
           {children}
         </main>
       </body>
