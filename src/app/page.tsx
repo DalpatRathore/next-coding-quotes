@@ -1,9 +1,7 @@
-import HeroSection from "@/components/HeroSection";
-
 export default async function Home() {
   return (
     <main>
-      <HeroSection></HeroSection>
+      <h1>Dalpat</h1>
     </main>
   );
 }
