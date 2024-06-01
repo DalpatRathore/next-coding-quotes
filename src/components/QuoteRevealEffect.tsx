@@ -12,7 +12,7 @@ type QuoteRevealEffectProps = {
 const QuoteRevealEffect = ({ quote }: QuoteRevealEffectProps) => {
   return (
     <>
-      <div className="py-10 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
+      <div className="p-4">
         <Card title={quote.author} content={quote.en} icon={<AceternityIcon />}>
           <CanvasRevealEffect
             animationSpeed={3}
