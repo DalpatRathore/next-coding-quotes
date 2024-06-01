@@ -3,6 +3,7 @@ import React from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+import { MinusIcon } from "@radix-ui/react-icons";
 
 type QuoteRevealEffectProps = {
   quote: { id: string; author: string; en: string };
@@ -11,7 +12,7 @@ type QuoteRevealEffectProps = {
 const QuoteRevealEffect = ({ quote }: QuoteRevealEffectProps) => {
   return (
     <>
-      <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-black w-full gap-4 mx-auto px-8">
+      <div className="py-10 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
         <Card title={quote.author} content={quote.en} icon={<AceternityIcon />}>
           <CanvasRevealEffect
             animationSpeed={3}
@@ -40,7 +41,7 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border group/canvas-card flex items-center justify-center  max-w-sm w-full mx-auto p-4 h-[30rem] relative"
+      className="border group/canvas-card flex items-center justify-center  max-w-lg w-full mx-auto p-4 h-[30rem] relative"
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-950" />
@@ -64,11 +65,12 @@ const Card = ({
           {icon}
         </div>
         <div className="flex flex-col gap-5">
-          <p className="dark:text-white text-base opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black font-normal group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+          <p className="dark:text-white text-base opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black font-normal group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 leading-7">
             {content}
           </p>
-          <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
-            {title}
+
+          <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 flex items-center justify-center gap-x-1">
+            <MinusIcon></MinusIcon> {title}
           </h2>
         </div>
       </div>
