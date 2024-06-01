@@ -42,10 +42,10 @@ const Card = ({
       onMouseLeave={() => setHovered(false)}
       className="border group/canvas-card flex items-center justify-center  max-w-sm w-full mx-auto p-4 h-[30rem] relative"
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-blue-300" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-950" />
+      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black group-hover/canvas-card:text-sky-950" />
 
       <AnimatePresence>
         {hovered && (
