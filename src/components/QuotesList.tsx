@@ -32,7 +32,7 @@ const QuotesList = () => {
           currentPage={currentPage}
           pageSize={pageSize}
           totalItems={totalQuotes}
-          onPageChange={handlePageChange}
+          onPageChange={pageNumber => handlePageChange(pageNumber)}
         />
       </div>
     </div>

@@ -8,14 +8,23 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
+type QuotePaginationProps = {
+  currentPage: number;
+  pageSize: number;
+  totalItems: number;
+  onPageChange: (pageNumber: number) => void;
+};
+
 const QuotePagination = ({
   currentPage,
   pageSize,
   totalItems,
   onPageChange,
-}: any) => {
+}: QuotePaginationProps) => {
   // Calculate the total number of pages
   const totalPages = Math.ceil(totalItems / pageSize);
+
+  console.log(typeof currentPage);
 
   // Determine the range of page numbers to display
   let startPage = currentPage - 2;
@@ -48,7 +57,7 @@ const QuotePagination = ({
           <PaginationPrevious
             href="#"
             onClick={() => onPageChange(currentPage - 1)}
-            disabled={currentPage === 1}
+            // disabled={currentPage === (1 as any)}
           />
         </PaginationItem>
         {startPage > 1 && (
@@ -90,7 +99,7 @@ const QuotePagination = ({
           <PaginationNext
             href="#"
             onClick={() => onPageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
+            // disabled={currentPage === totalPages}
           />
         </PaginationItem>
       </PaginationContent>
