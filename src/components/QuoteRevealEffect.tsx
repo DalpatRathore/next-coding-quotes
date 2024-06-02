@@ -41,12 +41,12 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border group/canvas-card flex items-center justify-center  max-w-lg w-full mx-auto p-4 h-[30rem] relative"
+      className="border dark:border-gray-600 group/canvas-card flex items-center justify-center max-w-lg w-full mx-auto p-4 h-[30rem] relative hover:border-0"
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-950" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
       <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black group-hover/canvas-card:text-sky-950" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
 
       <AnimatePresence>
         {hovered && (
@@ -61,7 +61,7 @@ const Card = ({
       </AnimatePresence>
 
       <div className="relative z-20 text-center">
-        <div className="group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full mx-auto flex items-center justify-center">
+        <div className="group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full mx-auto flex items-center justify-center absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
           {icon}
         </div>
         <div className="flex flex-col gap-5">
