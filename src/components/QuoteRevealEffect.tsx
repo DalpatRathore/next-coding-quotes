@@ -41,7 +41,7 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border dark:border-gray-600 group/canvas-card flex items-center justify-center max-w-lg w-full mx-auto p-4 h-[30rem] relative hover:border-0"
+      className="border  dark:border-gray-600 group/canvas-card flex items-center justify-center max-w-lg w-full mx-auto p-4 h-[30rem] relative hover:border-0 bg-gray-100 dark:bg-black"
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
