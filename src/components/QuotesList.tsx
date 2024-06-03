@@ -28,7 +28,7 @@ const QuotesList = () => {
           ></QuoteRevealEffect>
         ))}
       </div>
-      <div className="border-t pt-10">
+      <div className="border-t pt-10 border-black/20 dark:border-white/20">
         <QuotePagination
           currentPage={currentPage}
           pageSize={pageSize}

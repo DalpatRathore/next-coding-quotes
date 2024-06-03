@@ -3,7 +3,7 @@ import QuotesList from "@/components/QuotesList";
 
 export default async function Home() {
   return (
-    <main>
+    <main className="max-w-[1920px] mx-auto">
       <HeroSection></HeroSection>
       <QuotesList></QuotesList>
     </main>
