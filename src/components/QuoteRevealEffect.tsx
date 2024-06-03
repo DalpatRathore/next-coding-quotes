@@ -7,13 +7,19 @@ import { MinusIcon } from "@radix-ui/react-icons";
 
 type QuoteRevealEffectProps = {
   quote: { id: string; author: string; en: string };
+  quoteNo: number;
 };
 
-const QuoteRevealEffect = ({ quote }: QuoteRevealEffectProps) => {
+const QuoteRevealEffect = ({ quote, quoteNo }: QuoteRevealEffectProps) => {
   return (
     <>
       <div className="p-4">
-        <Card title={quote.author} content={quote.en} icon={<AceternityIcon />}>
+        <Card
+          title={quote.author}
+          content={quote.en}
+          quoteNo={quoteNo}
+          icon={<AceternityIcon />}
+        >
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-sky-600"
@@ -28,11 +34,13 @@ const QuoteRevealEffect = ({ quote }: QuoteRevealEffectProps) => {
 const Card = ({
   title,
   content,
+  quoteNo,
   icon,
   children,
 }: {
   title: string;
   content: string;
+  quoteNo: number;
   icon: React.ReactNode;
   children?: React.ReactNode;
 }) => {
@@ -43,6 +51,9 @@ const Card = ({
       onMouseLeave={() => setHovered(false)}
       className="border  dark:border-gray-600 group/canvas-card flex items-center justify-center max-w-lg w-full mx-auto p-4 h-[30rem] relative hover:border-0 bg-gray-100 dark:bg-black"
     >
+      <span className="absolute h-6 w-6 bottom-5 left-1/2 -transalte-y-1/2 dark:text-white text-black group-hover/canvas-card:text-sky-400">
+        {quoteNo}
+      </span>
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
       <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
