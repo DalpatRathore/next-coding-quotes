@@ -75,7 +75,7 @@ const QuotePagination = ({
         {pages.map(page => (
           <PaginationItem key={page}>
             <PaginationLink
-              href="#"
+              href="#quotes"
               isActive={page === currentPage}
               onClick={() => onPageChange(page)}
             >
@@ -90,14 +90,17 @@ const QuotePagination = ({
         )}
         {endPage < totalPages && (
           <PaginationItem>
-            <PaginationLink href="#" onClick={() => onPageChange(totalPages)}>
+            <PaginationLink
+              href="#quotes"
+              onClick={() => onPageChange(totalPages)}
+            >
               {totalPages}
             </PaginationLink>
           </PaginationItem>
         )}
         <PaginationItem>
           <PaginationNext
-            href="#"
+            href="#quotes"
             onClick={() => onPageChange(currentPage + 1)}
             // disabled={currentPage === totalPages}
           />

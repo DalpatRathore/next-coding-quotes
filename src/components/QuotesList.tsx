@@ -21,7 +21,7 @@ const QuotesList = () => {
   };
 
   return (
-    <div className="py-10">
+    <div className="py-10" id="quotes">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 px-2 py-10">
         {quotes.map((quote, i) => (
           <QuoteRevealEffect
