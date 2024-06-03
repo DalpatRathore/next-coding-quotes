@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { MinusIcon } from "@radix-ui/react-icons";
+import { Skeleton } from "./ui/skeleton";
 
 type QuoteRevealEffectProps = {
   quote: { id: string; author: string; en: string };
@@ -11,21 +12,35 @@ type QuoteRevealEffectProps = {
 };
 
 const QuoteRevealEffect = ({ quote, quoteNo }: QuoteRevealEffectProps) => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
   return (
     <>
       <div className="p-4">
-        <Card
-          title={quote.author}
-          content={quote.en}
-          quoteNo={quoteNo}
-          icon={<AceternityIcon />}
-        >
-          <CanvasRevealEffect
-            animationSpeed={3}
-            containerClassName="bg-sky-600"
-            colors={[[125, 211, 252]]}
-          />
-        </Card>
+        {isLoading ? (
+          <div className="flex-col space-y-3 border  dark:border-gray-600 group/canvas-card flex items-center justify-center max-w-lg w-full mx-auto p-6 h-[30rem] relative hover:border-0 bg-gray-100 dark:bg-black">
+            <Skeleton className="h-[20rem] w-full rounded" />
+            <Skeleton className="h-20 w-full" />
+            <Skeleton className="h-10 w-10 rounded-full" />
+          </div>
+        ) : (
+          <Card
+            title={quote.author}
+            content={quote.en}
+            quoteNo={quoteNo}
+            icon={<AceternityIcon />}
+          >
+            <CanvasRevealEffect
+              animationSpeed={3}
+              containerClassName="bg-sky-600"
+              colors={[[125, 211, 252]]}
+            />
+          </Card>
+        )}
       </div>
     </>
   );

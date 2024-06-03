@@ -62,7 +62,7 @@ const QuotePagination = ({
         </PaginationItem>
         {startPage > 1 && (
           <PaginationItem>
-            <PaginationLink href="#" onClick={() => onPageChange(1)}>
+            <PaginationLink href="#quotes" onClick={() => onPageChange(1)}>
               1
             </PaginationLink>
           </PaginationItem>
