@@ -43,7 +43,7 @@ const HeroSectionRevealEffect = () => {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="h-[40rem] flex flex-col lg:flex-row overflow-hidden items-center justify-center bg-black w-full gap-4 mx-auto px-8 relative"
+      className="h-[20rem] md:h-[30rem] lg:h-[40rem] flex flex-col lg:flex-row overflow-hidden items-center justify-center bg-black w-full gap-4 mx-auto px-8 relative"
     >
       <TypewriterEffect words={words} />
 

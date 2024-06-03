@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { MinusIcon } from "@radix-ui/react-icons";
 import { Skeleton } from "./ui/skeleton";
+import { Button } from "./ui/button";
 
 type QuoteRevealEffectProps = {
   quote: { id: string; author: string; en: string };
@@ -67,7 +68,9 @@ const Card = ({
       className="border  dark:border-gray-600 group/canvas-card flex items-center justify-center max-w-lg w-full mx-auto p-4 h-[30rem] relative hover:border-0 bg-gray-100 dark:bg-black"
     >
       <span className="absolute h-6 w-6 bottom-5 left-1/2 -transalte-y-1/2 dark:text-white text-black group-hover/canvas-card:text-sky-400">
-        {quoteNo}
+        <Button variant={"outline"} size={"icon"}>
+          {quoteNo}
+        </Button>
       </span>
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black group-hover/canvas-card:text-sky-400" />
