@@ -9,9 +9,6 @@ const QuotesList = () => {
   const pageSize = 8;
   const totalQuotes = 501; // Total number of quotes
 
-  // Calculate the start index based on the current page and page size
-  const startIndex = (currentPage - 1) * pageSize;
-
   // Fetch quotes for the current page
   const quotes = fetchQuotes(currentPage, pageSize);
 

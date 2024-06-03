@@ -24,8 +24,6 @@ const QuotePagination = ({
   // Calculate the total number of pages
   const totalPages = Math.ceil(totalItems / pageSize);
 
-  console.log(typeof currentPage);
-
   // Determine the range of page numbers to display
   let startPage = currentPage - 2;
   let endPage = currentPage + 2;
