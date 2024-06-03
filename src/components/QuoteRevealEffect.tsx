@@ -76,7 +76,7 @@ const Card = ({
           {icon}
         </div>
         <div className="flex flex-col gap-5">
-          <p className="dark:text-white text-base opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black font-normal group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 leading-7">
+          <p className="dark:text-white text-base opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black font-normal group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 leading-7 backdrop-blur-sm p-4 rounded-md">
             {content}
           </p>
 
