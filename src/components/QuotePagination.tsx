@@ -7,6 +7,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { Button } from "./ui/button";
 
 type QuotePaginationProps = {
   currentPage: number;
@@ -52,11 +53,16 @@ const QuotePagination = ({
     <Pagination>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious
-            href="#"
-            onClick={() => onPageChange(currentPage - 1)}
-            // disabled={currentPage === (1 as any)}
-          />
+          {currentPage !== 1 ? (
+            <PaginationPrevious
+              href="#quotes"
+              onClick={() => onPageChange(currentPage - 1)}
+            />
+          ) : (
+            <Button disabled variant={"outline"} size={"sm"}>
+              <PaginationPrevious href="#quotes" />
+            </Button>
+          )}
         </PaginationItem>
         {startPage > 1 && (
           <PaginationItem>
@@ -97,11 +103,16 @@ const QuotePagination = ({
           </PaginationItem>
         )}
         <PaginationItem>
-          <PaginationNext
-            href="#quotes"
-            onClick={() => onPageChange(currentPage + 1)}
-            // disabled={currentPage === totalPages}
-          />
+          {currentPage === totalPages ? (
+            <Button disabled variant={"outline"} size={"sm"}>
+              <PaginationNext href="#quotes" />
+            </Button>
+          ) : (
+            <PaginationNext
+              href="#quotes"
+              onClick={() => onPageChange(currentPage + 1)}
+            />
+          )}
         </PaginationItem>
       </PaginationContent>
     </Pagination>
