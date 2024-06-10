@@ -29,7 +29,7 @@ const QuoteDrawer = () => {
       setData(result);
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setIsLoading(false);
     }
@@ -47,15 +47,15 @@ const QuoteDrawer = () => {
     <Drawer>
       <DrawerTrigger
         onClick={handleClick}
-        className="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+        className="flex items-center justify-center text-white bg-blue-700 rounded-full w-10 h-10 md:w-14 md:h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
       >
-        <MessageSquareQuote className="w-6 h-6"></MessageSquareQuote>
+        <MessageSquareQuote className="w-4 h-4 md:w-6 md:h-6"></MessageSquareQuote>
       </DrawerTrigger>
       <DrawerContent className="mx-2">
         <div className="mx-auto w-full max-w-2xl my-10">
           <DrawerHeader className="space-y-5">
             <Quote></Quote>
-            <DrawerTitle className="border-l-4 pl-2 ml-2 leading-8 tracking-widest">
+            <DrawerTitle className="border-l-4 pl-2 ml-2 leading-8 tracking-widest text-sm md:text-lg text-left">
               {isLoading ? (
                 <Skeleton className="h-[125px] w-full rounded" />
               ) : (
@@ -64,7 +64,7 @@ const QuoteDrawer = () => {
             </DrawerTitle>
             <DrawerDescription className="flex items-center justify-end">
               <Minus className="mr-2"></Minus>
-              <span className="italic text-lg">
+              <span className="italic text-base md:text-lg">
                 {isLoading ? <Skeleton className="h-8 w-40" /> : data.author}
               </span>
             </DrawerDescription>
