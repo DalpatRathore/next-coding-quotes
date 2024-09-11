@@ -16,6 +16,7 @@ import { Skeleton } from "./ui/skeleton";
 
 const QuoteDrawer = () => {
   const [isLoading, setIsLoading] = useState(false);
+
   const [data, setData] = useState({
     quote: "Life is a sum of all our choices.",
     author: "Albert Camus",
@@ -24,10 +25,11 @@ const QuoteDrawer = () => {
   const fetchQuotes = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("https://stoic.tekloon.net/stoic-quote");
-      const result = await response.json();
-      setData(result);
-      setIsLoading(false);
+      const response = await fetch("api/stoic-quote");
+      if (response.ok) {
+        const result = await response.json();
+        setData(result.data);
+      }
     } catch (error) {
       console.error(error);
     } finally {
