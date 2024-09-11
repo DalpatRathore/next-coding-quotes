@@ -26,7 +26,7 @@
     "eslint-config-next": "^14.2.3",
     "framer-motion": "^11.2.10",
     "lucide-react": "^0.391.0",
-    "next": "^14.2.3",
+    "next": "^14.2.9",
     "next-themes": "^0.3.0",
     "postcss": "8.4.27",
     "react": "^18.3.1",
@@ -40,5 +40,6 @@
     "vaul": "^0.9.1"
   },
   "devDependencies": {
-    "@types/three": "^0.165.0"  }
+    "@types/three": "^0.165.0"
+  }
 }
