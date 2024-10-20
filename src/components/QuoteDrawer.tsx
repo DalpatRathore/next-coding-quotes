@@ -56,8 +56,8 @@ const QuoteDrawer = () => {
       <DrawerContent className="mx-2">
         <div className="mx-auto w-full max-w-2xl my-10">
           <DrawerHeader className="space-y-5">
-            <Quote></Quote>
-            <DrawerTitle className="border-l-4 pl-2 ml-2 leading-8 tracking-widest text-sm md:text-lg text-left">
+            <Quote className="text-orange-500"></Quote>
+            <DrawerTitle className="border-l-4 pl-2 ml-2 leading-8 tracking-widest text-sm md:text-lg text-left border-orange-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500  via-sky-500  to-emerald-500">
               {isLoading ? (
                 <Skeleton className="h-[125px] w-full rounded" />
               ) : (
@@ -65,8 +65,8 @@ const QuoteDrawer = () => {
               )}
             </DrawerTitle>
             <DrawerDescription className="flex items-center justify-end">
-              <Minus className="mr-2"></Minus>
-              <span className="italic text-base md:text-lg">
+              <Minus className="mr-2 text-orange-500"></Minus>
+              <span className="italic text-base md:text-lg bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">
                 {isLoading ? <Skeleton className="h-8 w-40" /> : data.author}
               </span>
             </DrawerDescription>
