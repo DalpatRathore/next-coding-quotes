@@ -64,6 +64,13 @@ const QuoteDrawer = () => {
                 data.quote
               )}
             </DrawerTitle>
+            {/* <DrawerTitle className="border-l-4 pl-2 ml-2 leading-8 tracking-widest text-sm md:text-lg text-left border-orange-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500  via-sky-500  to-emerald-500">
+              {isLoading ? (
+                <Skeleton className="h-[125px] w-full rounded" />
+              ) : (
+                data.quote
+              )}
+            </DrawerTitle> */}
             <DrawerDescription className="flex items-center justify-end">
               <Minus className="mr-2 text-orange-500"></Minus>
               <span className="italic text-base md:text-lg bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-blue-500">
@@ -73,9 +80,7 @@ const QuoteDrawer = () => {
           </DrawerHeader>
           <DrawerFooter className="absolute top-0 right-0">
             <DrawerClose>
-              <Button variant="outline" size={"icon"}>
-                <X></X>
-              </Button>
+              <X></X>
             </DrawerClose>
           </DrawerFooter>
         </div>
